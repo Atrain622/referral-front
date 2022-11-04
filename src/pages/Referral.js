@@ -64,8 +64,7 @@ const Referral = () => {
     const [walletstatus, set_walletstatus] = useState("Connect Wallet");
 
     const checkReferralStatusOrCreateReferralLink = async (d) => {
-        //await axios.post(`https://referralfly.herokuapp.com/api/users/check`, { walletAddress: d, referralLink: url }).then(res => {
-            await axios.post(`https://dashboard.flyguyz.io/api/users/check`, { walletAddress: d, referralLink: url }).then(res => {
+        await axios.post(`https://referralfly.herokuapp.com/api/users/check`, { walletAddress: d, referralLink: url }).then(res => {
             if (res.statusText === "OK") {
                 swal("Success", "Link generated", "success");
                 setConnected(true);
